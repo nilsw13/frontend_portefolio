@@ -22,6 +22,7 @@ export default {
           'beige-custom': '#f0ead6',
           'blue-custom': '#4ecdc4',
 		  'black-custom': "#1a1a1a",
+		  'pink-custom': '#d1548e',
 		  
 
     			background: 'hsl(var(--background))',

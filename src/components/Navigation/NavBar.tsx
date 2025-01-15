@@ -2,6 +2,7 @@ import { AlignHorizontalDistributeCenter, HomeIcon, MenuIcon, ProjectorIcon, XIc
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import me from '../../assets/image2vector.svg'
 
 
 
@@ -50,17 +51,20 @@ function NavBar() {
     <>
     
     <div className=' border-b-2 border-black-custom p-6 flex justify-between items-center bg-[#f0ead6] sticky top-0 z-10   mt-4 '>
-    <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-[#4ecdc4] text-[#f0ead6] flex items-center justify-center font-bold text-xl rounded border border-pink-400 shadow-md">
-            NW
-          </div>
+    <div className="flex items-center space-x-6">
+          <motion.img
+                       whileHover={{ scale: 1.1 }}
+                       src={me} 
+                       className="w-16 h-16 inline-block pr-4" 
+                       alt="Portrait de Nils" />
+                      
           <span className="font-semibold text-lg">Nils Wenting</span>
 
           {!isMobile && (
-                <span className='bg-green-300 px-2 py-1 rounded-lg font-bold text-xs items-center text-center mt-1 shadow-md hover:scale-105 transition-all'>
+                <span className='bg-green-300 px-2 py-1 rounded-lg font-bold text-xs items-center text-center mt-1  shadow-md hover:scale-105 transition-all'>
             
                 <Link to='/contact' className='text-black'>
-                 ¤ Recherche alternance
+                 ¤ Seek apprenticeship
                 </Link>
                  
                  </span>
@@ -144,7 +148,7 @@ function NavBar() {
                 <span className='bg-green-300 px-2 py-1 rounded-lg font-bold text-xs items-center text-center mt-1 shadow-md hover:scale-105 transition-all'>
             
                 <Link to='/contact' className='text-black'>
-                 ¤ Recherche alternance
+                 ¤ Seek apprenticeship
                 </Link>
                  
                  </span>

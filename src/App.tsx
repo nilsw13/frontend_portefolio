@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>    
-      <div className='  text-[#1a1a1a] font-sans relative overflow-hidden'>
+      <div className='  text-[#1a1a1a] font-sans'>
 
         <NavBar />
 
