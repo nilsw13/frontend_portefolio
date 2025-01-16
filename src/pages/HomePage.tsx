@@ -1,3 +1,4 @@
+import ContactForm from '@/components/Contact/ContactForm'
 import Hero from '@/components/Hero/Hero'
 import ProjectsGrid from '@/components/ProjectSection/ProjectGrid'
 import StackSection from '@/components/StackSection/StackSection'
@@ -26,8 +27,14 @@ function HomePage() {
         
 
            <SectionSeparator title='Projects' />
-           <section className='flex-1 flex flex-col items-center justify-center mb-[30vh]'>
+           <section className='mb-[10vh] mt-[10vh]'>
                 <ProjectsGrid />
+           </section>
+
+
+           <SectionSeparator title='Contact Me' />
+           <section className='mb-[10vh] mt-[10vh]'>
+            <ContactForm />
            </section>
 
             

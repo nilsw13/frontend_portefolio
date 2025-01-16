@@ -1,4 +1,4 @@
-import { AlignHorizontalDistributeCenter, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
+import { AlignHorizontalDistributeCenter, Dot, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -61,11 +61,16 @@ function NavBar() {
           <span className="font-semibold text-lg">Nils Wenting</span>
 
           {!isMobile && (
-                <span className='bg-green-300 px-2 py-1 rounded-lg font-bold text-xs items-center text-center mt-1  shadow-md hover:scale-105 transition-all'>
-            
+                <span className='bg-green-300 px-2 py-2 rounded-none border border-black-custom  font-bold text-xs items-center text-center mt-1 hover:-translate-y-0.5   shadow-custom hover:shadow-custom-hover transition-all'>
+                  <div>
                 <Link to='/contact' className='text-black'>
-                 ¤ Seek apprenticeship
+                
+                <Dot className='inline-block w-4 h-4 text-green-700 -mt-0.5  '/>
+                <p className='inline-block'>Seek apprenticeship</p>
+                
                 </Link>
+                </div>
+                 
                  
                  </span>
             ) 

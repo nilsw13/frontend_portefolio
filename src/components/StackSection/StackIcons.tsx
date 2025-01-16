@@ -41,7 +41,7 @@ function StackIcons() {
 
   return (
       <div className='grid p-4 md:p-0 md:flex justify-center items-center md:w-2/3 mt-4  gap-8 md:space-x-4'>
-            {icons.map((icon, index) => (
+            {icons.map((icon) => (
                 
                     <div className='flex flex-row justify-between space-y-2 gap-4'>
                         <img src={icon.image}
