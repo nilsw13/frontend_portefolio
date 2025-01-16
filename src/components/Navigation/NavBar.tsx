@@ -66,7 +66,7 @@ function NavBar() {
                 <Link to='/contact' className='text-black'>
                 
                 <Dot className='inline-block w-4 h-4 text-green-700 -mt-0.5  '/>
-                <p className='inline-block'>Seek apprenticeship</p>
+                <Link to={'/contact/mail'} className='inline-block'>Seek apprenticeship</Link>
                 
                 </Link>
                 </div>

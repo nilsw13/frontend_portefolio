@@ -37,7 +37,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div>
-      <Card className='bg-transparent border-2 border-black-custom rounded-none shadow-custom'>
+      <Card className='bg-transparent border-2 border-black-custom rounded-none shadow-custom hover:scale-[1.05] hover:shadow-custom-hover transition-all'>
         <CardHeader>
           <div className='flex flex-row justify-between mb-4 '>
             <CardTitle>{title}</CardTitle>

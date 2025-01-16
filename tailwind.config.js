@@ -9,6 +9,7 @@ export default {
 			  }
 			,
 			boxShadow: {
+				'small-custom': '2px 2px 0px black',
 				'custom': '4px 4px 0px black',
 				'custom-hover': '8px 8px 0px black',  
 			  }

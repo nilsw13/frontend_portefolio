@@ -21,7 +21,7 @@ function StackBadge({variant}: StackBadgeProps) {
     return (
         <span className={`
           inline-flex items-center px-3 py-1 
-          rounded-none shadow-custom hover:shadow-custom-hover text-xs font-medium 
+          rounded-none shadow-small-custom hover:shadow-custom text-xs font-medium  hover:-space-y-0.5 transition-all
           ${getBadgeStyle(variant)}
         `}>
 

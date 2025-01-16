@@ -12,7 +12,7 @@ function ProjectsGrid() {
 
 
   return (
-    <div className='grid p-4 md:p-0 md:grid-cols-2 md:w-2/3  gap-4 mx-auto '>
+    <div className='grid p-4 md:p-0 md:grid-cols-2 md:w-2/3  gap-6 mx-auto '>
         <ProjectCard
             title='Studio Headshot Pro'
             technologiesFront={'React'}

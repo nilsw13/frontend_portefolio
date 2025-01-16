@@ -1,8 +1,5 @@
-import React from 'react'
-import { Card } from '../ui/card'
-import form from '../../assets/form.png'
-import { motion } from 'framer-motion'
-import ContactIcons from './ContactIcons'
+
+import { Card } from '../../ui/card'
 
 function ContactForm() {
   return (
@@ -10,7 +7,7 @@ function ContactForm() {
 
         
 
-            <Card className='bg-transparent border-2 border-black-custom shadow-custom hover:shadow-custom-hover rounded-none md:p-6 p-8 transition-all hover:-translate-y-1 md:w-2/3 w-4/5 mx-auto'>
+            <Card className='bg-transparent border-2  border-black-custom shadow-custom hover:shadow-custom-hover rounded-none md:p-6 p-8 transition-all hover:-translate-y-1 md:w-2/3 w-4/5 mx-auto'>
 
             <div className='flex flex-col items-center justify-center'>
                 <h1 className='text-3xl font-bold text-center'>Contact Me</h1>
@@ -21,7 +18,7 @@ function ContactForm() {
             
 
            
-               <Card className='mt-4 bg-transparent border-2 border-black-custom shadow-custom hover:shadow-custom-hover rounded-none md:p-12 p-20 transition-all hover:-translate-y-1 md:w-2/3 w-4/5 mx-auto'>
+               <Card className='mt-4 bg-transparent border-2 border-black-custom shadow-custom  rounded-none md:p-12 p-20  md:w-2/3 w-4/5 mx-auto'>
                  <form className='flex flex-col items-center justify-center gap-4'>
                         <input type='text' placeholder='Name' className='border-2 border-black-custom rounded-none shadow-custom p-2 md:w-2/3'/>
                         <input type='email' placeholder='Email' className='border-2 border-black-custom rounded-none shadow-custom p-2 md:w-2/3'/>
@@ -30,10 +27,7 @@ function ContactForm() {
                     </form>
                </Card>
      
-               <div className='w-screen  flex justify-center items-center mt-8'>
-            <ContactIcons />
-
-            </div>
+              
 
     </div>
 
