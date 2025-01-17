@@ -6,6 +6,8 @@ import StackSection from '@/components/StackSection/StackSection'
 import { SectionSeparator } from '@/components/utils/SectionSeparator'
 import { Outlet } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Card } from '@/components/ui/card'
+import ContactHeader from '@/components/Contact/ContactHeader'
 
 function HomePage() {
   return (
@@ -46,8 +48,10 @@ function HomePage() {
                 duration: 0.5
                }}}
               exit={{ opacity: 0 }}
-              className='min-h-full '>
-            <Outlet  />
+              className='flex flex-col min-h-full '>
+                  <ContactHeader />
+                  <Outlet  />
+            
             </motion.div>
             <div className='w-screen  flex justify-center items-center mt-8'>
             <ContactIcons />

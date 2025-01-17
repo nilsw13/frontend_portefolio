@@ -16,8 +16,8 @@ import StackBadge from "../utils/StackBadges";
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string;
-  link: string;
+  image?: string;
+  link: string | undefined;
   // Ajoutons des props pour la modal
   longDescription?: string;
   technologiesFront?: string;
@@ -33,7 +33,7 @@ function ProjectCard({
   technologiesFront,
   technologiesBack,
   db,
-  date
+  date, link
 }: ProjectCardProps) {
   return (
     <div>
@@ -102,7 +102,7 @@ function ProjectCard({
                 <div className="mt-6">
                   
                   <a
-                    href={"https://photocv-frontend.vercel.app/"}
+                    href={link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block px-4 py-2 bg-blue-custom text-white border-2 border-black-custom rounded-none shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 transition-all"
