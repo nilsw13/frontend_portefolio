@@ -40,10 +40,10 @@ function StackIcons() {
 
 
   return (
-      <div className='grid p-4 md:p-0 md:flex justify-center items-center md:w-2/3 mt-4  gap-8 md:space-x-4'>
+      <div className='grid items-center justify-center gap-8 p-4 mt-4 md:p-0 md:flex md:w-2/3 md:space-x-4'>
             {icons.map((icon) => (
                 
-                    <div className='flex flex-row justify-between space-y-2 gap-4'>
+                    <div className='flex flex-row justify-between gap-4 space-y-2'>
                         <img src={icon.image}
                             className='w-16 h-16 rounded-full  border-2 border-black-custom p-3 shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 transition-all'
                         />

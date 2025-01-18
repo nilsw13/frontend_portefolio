@@ -8,14 +8,16 @@ function StackBadge({variant}: StackBadgeProps) {
     const getBadgeStyle = (variant: string) => {
 
         const styles: { [key: string]: string } = {
-            'React': 'bg-blue-custom text-white',
+            'nostack': 'items-end hidden',
+            'Description': 'bg-yellow-200 text-black',
+            'ReactJs - Vite': 'bg-blue-custom text-black',
             'Node': 'bg-yellow-300 text-gray-900',
-            'Java': 'bg-pink-custom text-white',
+            'Java - Spring Boot': 'bg-green-300 text-black',
             'Spring Boot': 'bg-green-200 text-gray-900',
-            'PostgreSQL': 'bg-blue-600 text-white'
+            'PostgreSQL': 'bg-blue-400 text-black'
           };
 
-        return styles[variant] || 'bg-gray-300 text-gray-900';
+        return styles[variant] || 'bg-yellow-200 text-gray-900';
     };
 
     return (

@@ -26,17 +26,17 @@ function ProjectsGrid() {
 
 
   return (
-    <div className='grid p-4 md:p-0 md:grid-cols-2 md:w-2/3  gap-6 mx-auto '>
+    <div className='grid gap-6 p-4 mx-auto md:p-0 md:grid-cols-2 md:w-2/3 '>
            {projects.map((project) => (
                <ProjectCard 
                   
                 key={project.id}
                 title={project.projectName}
                 description={project.projectDescription}
-               technologiesBack={project.backendStack}
+               technologiesBack={project.backendStack }
                technologiesFront={project.frontendStack}
                db={project.databaseStack}
-               link={project.url}
+               projectLink={project.projectLink}
                            
                />
              ))}

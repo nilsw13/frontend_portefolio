@@ -12,12 +12,12 @@ interface Project {
     backendDeploymentStack?: string;
     frontendDeploymentStack?: string;
     image_s3_url?: string;
-    url?: string;
+    projectLink?: string;
 
     
 }
 
-
+ 
 export function useProjects() {
         
 
@@ -35,7 +35,7 @@ export function useProjects() {
         try{
             const response = await api.get('/projects/list');
             const projectsData = response.data;
-            console.log("projectsData: ",projectsData[0].projectName);
+            console.log("projectsData: ",projectsData);
             setProjects(projectsData);
             return projectsData;
             

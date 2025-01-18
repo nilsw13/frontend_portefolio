@@ -1,31 +1,203 @@
+import { useMessage } from '@/hooks/useMessage';
+import { Card } from '../../ui/card';
+import { useState } from 'react';
+import Toast from '@/components/utils/Toast';
 
-import { Card } from '../../ui/card'
+
+// Définissons une interface plus simple pour les données du formulaire
+interface FormData {
+  name: string;
+  email: string;
+  company: string;  
+  message: string;
+  phoneNumber: string;
+  loading: boolean;
+  error: string | null;
+}
 
 function ContactForm() {
+  // Simplifions l'état initial
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    company: '',
+    email: '',
+    message: '',
+    phoneNumber: '',
+    loading: false,
+    error: null
+  });
+
+
+
+
+
+  const [showToast, setShowToast] = useState<boolean>(false);
+
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
+  const { sendMessage, loading } = useMessage();
+
+
+  const resetBackgroundColors = () => {
+    const formFields = document.querySelectorAll('input, textarea');
+    formFields.forEach(field => {
+      (field as HTMLElement).style.backgroundColor = 'white';
+      (field as HTMLInputElement).style.transition = 'background-color 0.5s';
+    });
+  };
+
+  // Gestionnaire de changement amélioré
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+
+    e.target.style.backgroundColor = value.trim() === '' ? 'white' : '#ffffcc';
+
+
+
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  // Gestionnaire de soumission amélioré
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    try {
+      // Envoi direct des données sans imbrication inutile
+      await sendMessage(formData);
+      setShowToast(true);
+
+      resetBackgroundColors();
+
+      setIsSubmitSuccessful(true);
+      
+     
+      
+
+
+      
+      // Réinitialisation du formulaire après succès
+
+      
+
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        message: '',
+        phoneNumber: '',
+        loading: false,
+        error: null
+      });
+
+      
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+    }
+  };
+
   return (
-    <div className='flex flex-col items-center justify-center '>
+    <div className='flex flex-col items-center justify-center'>
+       <Toast
+        message="Message envoyé avec succès !"
+        isVisible={showToast}
+        onHide={() => setShowToast(false)}
+      />
+      <div className='md:w-2/3 max-w-2/3 h-2/3 max-h-2/3'>
+        <Card className='w-[95%] mt-4 bg-transparent border-2 border-black-custom shadow-custom rounded-none md:p-11 p-20 md:w-2/3 mx-auto'>
+         
+         
+       
 
-        
 
-          <div className='md:w-2/3 max-w-2/3 h-2/3 max-h-2/3  '>
+
+          <form onSubmit={handleSubmit} className='flex flex-col items-center justify-center gap-4'>
+
             
+            <input
+              id='name'
+              type='text'
+              name='name'
+              placeholder='Name'
+              value={formData.name}
+              onChange={handleChange}
+              className='p-2 border-2 rounded-none border-black-custom shadow-custom md:w-2/3'
+              required
+            />
+
+
 
             
+            <input 
+            id='company'
+            placeholder='Company'
+            name='company'
+            type="text"
+            value={formData.company}
+            onChange={handleChange}
+            className='p-2 border-2 rounded-none border-black-custom shadow-custom md:w-2/3'
+            required 
+            />
 
-           
-               <Card className=' w-[95%] mt-4 bg-transparent border-2 border-black-custom shadow-custom  rounded-none md:p-11 p-20  md:w-2/3  mx-auto'>
-                 <form className='flex flex-col items-center justify-center gap-4'>
-                        <input type='text' placeholder='Name' className='border-2 border-black-custom rounded-none shadow-custom p-2 md:w-2/3'/>
-                        <input type='email' placeholder='Email' className='border-2 border-black-custom rounded-none shadow-custom p-2 md:w-2/3'/>
-                        <textarea placeholder='Message' className='border-2 border-black-custom rounded-none shadow-custom p-2 md:w-2/3'/>
-                        <button className='bg-blue-custom text-white border-2 border-black-custom rounded-none shadow-custom p-2 hover:bg-blue-custom-hover hover:-translate-y-0.5 hover:shadow-custom-hover transition-all w-4/5 md:w-2/3'>Send</button>
-                    </form>
-               </Card>
-              </div>
+
+
+
+
+
+
+            
+            <input
+
+              id='email'
+              type='email'
+              name='email'
+              placeholder='Email'
+              value={formData.email}
+              onChange={handleChange}
               
+              className='p-2 border-2 rounded-none border-black-custom shadow-custom md:w-2/3'
+              required
+            />
 
+            <input 
+            id='phoneNumber'
+            name='phoneNumber'
+            type="tel"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            placeholder="Phone number"
+            className='p-2 border-2 rounded-none border-black-custom shadow-custom md:w-2/3'
+            />
+            
+
+
+            
+            <textarea
+              id='message'
+              name='message'
+              placeholder='Message'
+              value={formData.message}
+              onChange={handleChange}
+              className='p-2 border-2 rounded-none border-black-custom shadow-custom md:w-2/3'
+              required
+            />
+            
+            <button
+              type='submit'
+              disabled={loading}
+              className={`bg-blue-custom text-white border-2 border-black-custom rounded-none shadow-custom p-2 hover:bg-blue-custom-hover hover:-translate-y-0.5 hover:shadow-custom-hover transition-all w-4/5 md:w-2/3 ${
+                loading ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+            >
+              {loading ? 'Envoi en cours...' : 'Envoyer'}
+            </button>
+          </form>
+        </Card>
+      </div>
     </div>
-
-    )
+  );
 }
-export default ContactForm
+
+
+export default ContactForm;

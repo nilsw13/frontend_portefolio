@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import ContactForm from './components/Contact/contact-overview/ContactForm'
 
 import ContactTab from './components/Contact/contact-overview/ContactTab'
+import { Toaster } from './components/ui/toaster'
 
 function App() {
 
@@ -30,14 +31,14 @@ function App() {
                   title='Phone Contact'
                   subtitle='06 77 30 93 46'
                   description='I am available from Monday to Friday'
-                  horaires='From 9:00 to 18:00'
+                  postBUttonText='From 9:00 to 18:00'
                   buttonColor='bg-green-300' 
                   buttonText='Text me on whatsapp' />
                 }
                 
                   />
 
-
+                
                 <Route 
                 path='/contact/github' 
                 element={<ContactTab 
@@ -45,7 +46,8 @@ function App() {
                   description='Check out my projects and contributions:'
                   buttonColor='bg-blue-custom' 
                   buttonText='Visit my Github'
-                  postBUttonText='Feel free to explore my repositories and open source contributions' 
+                  postBUttonText=' Explore my repositories & contributions'
+                  redirectUrl='https://github.com/nilsw13/' 
                 />} />
 
 
@@ -58,6 +60,7 @@ function App() {
                   buttonColor='bg-blue-600' 
                   buttonText='Visit my Linkedin'
                   postBUttonText='Feel free to add me to your network'
+                  redirectUrl='https://linkedin.com/in/nils-wenting-332348281'
                 />} />
 
             </Route>
@@ -67,7 +70,10 @@ function App() {
 
         <Footer />
 
+
         </div>
+
+        <Toaster />
 
     </>
   )
