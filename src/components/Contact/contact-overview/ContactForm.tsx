@@ -104,8 +104,8 @@ function ContactForm() {
         isVisible={showToast}
         onHide={() => setShowToast(false)}
       />
-      <div className='md:w-2/3 max-w-2/3 h-2/3 max-h-2/3'>
-        <Card className='w-[95%] mt-4 bg-transparent border-2 border-black-custom shadow-custom rounded-none md:p-11 p-20 md:w-2/3 mx-auto'>
+      <div className='md:w-2/3 max-w-2/3 h-1/3 max-h-2/3'>
+        <Card className='h-[400px] w-[380px] p-3 mx-auto mt-4 bg-transparent border-2 rounded-none border-black-custom shadow-custom md:w-2/3'>
          
          
        

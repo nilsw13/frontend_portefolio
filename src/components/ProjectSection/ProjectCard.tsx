@@ -85,7 +85,7 @@ function ProjectCard({
           <div className="mt-auto">
             <Dialog>
               <DialogTrigger asChild>
-                <Button className="w-full hover:bg-blue-custom hover:-translate-y-0.5 transition-all hover:shadow-custom-hover rounded-none shadow-custom bg-blue-custom text-white border-2 border-black-custom">
+                <Button className="w-full hover:bg-blue-custom hover:-translate-y-0.5 transition-all hover:shadow-custom-hover rounded-none shadow-custom bg-blue-custom text-white border-2 border-black-custom ">
                   Voir le projet
                 </Button>
               </DialogTrigger>

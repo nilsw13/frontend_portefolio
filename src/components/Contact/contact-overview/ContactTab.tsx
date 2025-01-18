@@ -46,9 +46,9 @@ function ContactTab({title, subtitle, buttonText ,description, horaires, buttonC
                     }
                 }}
                 
-                className="w-[90%] md:w-2/3 md:max-w-2/3 md:h-2/3 md:max-h-2/3">
+                className="md:w-2/3 max-w-2/3 h-2/3 max-h-2/3">
 
-        <Card className="mt-4 rounded-none bg-transparent border-2 border-black-custom shadow-custom md:w-2/3 p-0.5 mx-auto">
+        <Card className="mt-4 w-[380px] h-[400px] rounded-none bg-transparent border-2 border-black-custom shadow-custom md:w-2/3 p-0.5 mx-auto">
 
         <div className='flex flex-col items-center justify-center gap-4 mt-20 mb-20'>
                     <h2 className='text-2xl font-bold'>{title}</h2>
