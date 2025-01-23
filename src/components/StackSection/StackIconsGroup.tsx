@@ -1,8 +1,4 @@
-import react from '../../assets/react.svg'
-import node from '../../assets/nodejs.svg'
-import java from '../../assets/java.svg'
-import spring from '../../assets/springboot-custom.svg'
-import postgresql from '../../assets/postgresql.svg'
+
 import StackIcon from './StackIcon'
 
 function StackIconsGroup({ technologiesFront, technologiesBack, db }: { 

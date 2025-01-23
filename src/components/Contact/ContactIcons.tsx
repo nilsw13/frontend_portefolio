@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Mail, PhoneCallIcon, GithubIcon, LinkedinIcon } from 'lucide-react';
 

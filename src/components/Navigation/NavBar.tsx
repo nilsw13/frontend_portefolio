@@ -1,5 +1,5 @@
 import { AlignHorizontalDistributeCenter, Dot, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
-import React, { useEffect, useState } from 'react'
+import{ useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import me from '../../assets/image2vector.svg'

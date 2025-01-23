@@ -6,12 +6,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent,  CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 import screenshot from "../../assets/photocv.png"
 import screenshot2 from "../../assets/photocv2.png"
 import StackBadge from "../utils/StackBadges";
-import StackIcon from "../StackSection/StackIcon";
+
 import StackIconsGroup from "../StackSection/StackIconsGroup";
 import { motion } from "framer-motion";
 

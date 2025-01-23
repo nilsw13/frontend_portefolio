@@ -1,5 +1,4 @@
-import React from 'react'
-import { Card } from '../ui/card'
+
 import java from '../../assets/java.svg'
 import react from '../../assets/react.svg'
 import node from '../../assets/nodejs.svg'

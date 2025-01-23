@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import ProjectCard from './ProjectCard'
-import img from '../../assets/react.svg'
 import { useProjects } from '@/hooks/useProjects';
 
 function ProjectsGrid() {
@@ -11,7 +10,7 @@ function ProjectsGrid() {
      */
 
 
-    const {projects, loading, error, fetchProjects} = useProjects();
+    const {projects, fetchProjects} = useProjects();
 
     // useeffect pour recuperer les projets en test 
 

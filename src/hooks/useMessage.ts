@@ -48,7 +48,7 @@ import { useCallback, useState } from "react";
           }
         }, []);
 
-
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const resetState = () => {
             setLoading(false);
             setError(null);

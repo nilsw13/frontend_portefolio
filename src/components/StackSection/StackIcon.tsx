@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import react from '../../assets/react.svg';
 import node from '../../assets/nodejs.svg';
 import java from '../../assets/java.svg';
@@ -20,7 +19,7 @@ const IconWrapper = ({ src, alt }: { src: string; alt: string }) => (
 
 function StackIcon({ variant }: StackIconProps) {
   // Configuration des icônes avec leurs sources et noms alternatifs
-  const iconsConfig = {
+  const iconsConfig: { [key: string]: { src: string; alt: string } } = {
     'ReactJs - Vite': { src: react, alt: 'React Logo' },
     'Node': { src: node, alt: 'Node.js Logo' },
     'Java': { src: java, alt: 'Java Logo' },
@@ -33,7 +32,7 @@ function StackIcon({ variant }: StackIconProps) {
     return null; // Ou retourner une icône par défaut si nécessaire
   }
 
-  const { src, alt } = iconsConfig[variant];
+  const { src, alt } = iconsConfig[variant as keyof typeof iconsConfig];
 
   return (
     <div className="flex flex-row justify-end">

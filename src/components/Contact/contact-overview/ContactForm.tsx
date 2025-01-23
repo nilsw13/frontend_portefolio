@@ -1,7 +1,9 @@
 import { useMessage } from '@/hooks/useMessage';
 import { Card } from '../../ui/card';
 import { useState } from 'react';
+
 import Toast from '@/components/utils/Toast';
+import messageSchema from '@/schemas/messageValidation';
 
 
 // Définissons une interface plus simple pour les données du formulaire
@@ -33,7 +35,9 @@ function ContactForm() {
 
   const [showToast, setShowToast] = useState<boolean>(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
+  const [isSubmitError, setIsSubmitError] = useState<boolean>(false);
   const { sendMessage, loading } = useMessage();
 
 
@@ -64,8 +68,12 @@ function ContactForm() {
     e.preventDefault();
     
     try {
+
+      const validatedData = messageSchema.parse(formData);
+      
+
       // Envoi direct des données sans imbrication inutile
-      await sendMessage(formData);
+      await sendMessage(validatedData);
       setShowToast(true);
 
       resetBackgroundColors();
@@ -94,16 +102,33 @@ function ContactForm() {
       
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
+      setIsSubmitError(true);
     }
   };
 
   return (
     <div className='flex flex-col items-center justify-center'>
+
+      {/* Afficher le toast si le message n'a pas ete envoyé */}
+
+   
+      {isSubmitError&& (
+        <Toast
+        message="Erreur lors de l'envoi du message"
+        isVisible={!showToast}
+        onHide={() => setIsSubmitError(false)}
+      />
+      )}
+
+
        <Toast
         message="Message envoyé avec succès !"
         isVisible={showToast}
         onHide={() => setShowToast(false)}
       />
+
+
+
       <div className='md:w-2/3 max-w-2/3 h-1/3 max-h-2/3'>
         <Card className='h-[400px] w-[380px] p-3 mx-auto mt-4 bg-transparent border-2 rounded-none border-black-custom shadow-custom md:w-2/3'>
          

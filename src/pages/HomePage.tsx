@@ -1,4 +1,3 @@
-import ContactForm from '@/components/Contact/contact-overview/ContactForm'
 import ContactIcons from '@/components/Contact/ContactIcons'
 import Hero from '@/components/Hero/Hero'
 import ProjectsGrid from '@/components/ProjectSection/ProjectGrid'
@@ -6,7 +5,6 @@ import StackSection from '@/components/StackSection/StackSection'
 import { SectionSeparator } from '@/components/utils/SectionSeparator'
 import { Outlet } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Card } from '@/components/ui/card'
 import ContactHeader from '@/components/Contact/ContactHeader'
 
 function HomePage() {
@@ -53,7 +51,7 @@ function HomePage() {
                   <Outlet  />
             
             </motion.div>
-            <div className='w-screen  flex justify-center items-center mt-8'>
+            <div className='flex items-center justify-center w-screen mt-8'>
             <ContactIcons />
 
             </div>

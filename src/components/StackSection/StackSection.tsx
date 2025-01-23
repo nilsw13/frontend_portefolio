@@ -1,4 +1,3 @@
-import React from 'react'
 import StackSpeech from './StackSpeech'
 import StackIcons from './StackIcons'
 
