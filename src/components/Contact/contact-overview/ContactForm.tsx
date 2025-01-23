@@ -109,25 +109,26 @@ function ContactForm() {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-
-      {/* Afficher le toast si le message n'a pas ete envoyé */}
-
-   
-      {isSubmitError&& (
-        <Toast
+    {/* Error Toast */}
+    {isSubmitError && (
+      <Toast
         message="Erreur lors de l'envoi du message"
         isVisible={!showToast}
         onHide={() => setIsSubmitError(false)}
       />
-      )}
+    )}
 
-
-       <Toast
+    {/* Success Toast */}
+    {isSubmitSuccessful && (
+      <Toast
         message="Message envoyé avec succès !"
         isVisible={showToast}
-        onHide={() => setShowToast(false)}
+        onHide={() => {
+          setShowToast(false);
+          setIsSubmitSuccessful(false);
+        }}
       />
-
+    )}
 
 
       <div className='md:w-2/3 max-w-2/3 h-1/3 max-h-2/3'>

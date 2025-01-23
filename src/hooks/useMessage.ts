@@ -17,6 +17,7 @@ import { useCallback, useState } from "react";
         sendMessage: (message: Message) => Promise<void>;
         loading: boolean;
         error: string | null;
+        resetState: () => void;
       }
 
 
@@ -61,6 +62,7 @@ import { useCallback, useState } from "react";
         return {
           sendMessage,
           loading,
-          error
+          error,
+          resetState
         };
       }
