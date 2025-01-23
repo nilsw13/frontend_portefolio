@@ -37,6 +37,7 @@ function ContactForm() {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState<boolean>(false);
+  // @ts-ignore
   const [isSubmitError, setIsSubmitError] = useState<boolean>(false);
   const { sendMessage, loading } = useMessage();
 

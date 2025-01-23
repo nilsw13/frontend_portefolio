@@ -17,7 +17,7 @@ interface ContactTabProps {
 }
 
 
-function ContactTab({title, subtitle, buttonText ,description, horaires, buttonColor, postBUttonText, redirectUrl} : ContactTabProps) {
+function ContactTab({title, buttonText ,description, horaires, buttonColor, postBUttonText, redirectUrl} : ContactTabProps) {
   return (
 
         

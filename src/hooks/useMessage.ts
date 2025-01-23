@@ -54,7 +54,7 @@ import { useCallback, useState } from "react";
             setError(null);
             
           }
-
+          // @ts-ignore
         
       
         // Retourne un objet avec toutes les valeurs nécessaires
