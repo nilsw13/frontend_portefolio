@@ -132,7 +132,7 @@ function ContactForm() {
 
 
       <div className='md:w-2/3 max-w-2/3 h-1/3 max-h-2/3'>
-        <Card className='h-[400px] w-[380px] p-3 mx-auto mt-4 bg-transparent border-2 rounded-none border-black-custom shadow-custom md:w-2/3'>
+        <Card className='h-[400px] w-[350px] p-3 mx-auto mt-4 bg-transparent border-2 rounded-none border-black-custom shadow-custom md:w-2/3'>
          
          
        

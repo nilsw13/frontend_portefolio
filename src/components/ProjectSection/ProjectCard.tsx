@@ -50,8 +50,7 @@ function ProjectCard({
           <div className="flex flex-row justify-between mb-2">
             <CardTitle className="text-xl font-bold truncate">{title.slice(0, 12).concat("  ...")}</CardTitle>
             <motion.div
-              initial={{ scale: 0.8, opacity: 0, }}            
-             whileInView={{ opacity: 1 , scale: 1.1, transition: { duration: 0.5 }, transformOrigin: 'center' }}
+             
              transition={{
               delay: 0.5,
              }}

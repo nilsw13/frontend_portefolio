@@ -1,7 +1,7 @@
 import  { useEffect } from 'react'
 import ProjectCard from './ProjectCard'
 import { useProjects } from '@/hooks/useProjects';
-
+import {motion} from 'framer-motion'
 function ProjectsGrid() {
 
     /**
@@ -25,7 +25,11 @@ function ProjectsGrid() {
 
 
   return (
-    <div className='grid gap-6 p-4 mx-auto md:p-0 md:grid-cols-2 md:w-2/3 '>
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.85 }} 
+      whileInView={{ opacity: 1}}
+      transition={{ duration: 1.2}}
+    className='grid gap-6 p-4 mx-auto md:p-0 md:grid-cols-2 md:w-2/3 '>
            {projects.map((project) => (
                <ProjectCard 
                   
@@ -39,7 +43,7 @@ function ProjectsGrid() {
                            
                />
              ))}
-    </div>
+    </motion.div>
   )
 }
 

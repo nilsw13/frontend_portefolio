@@ -7,44 +7,49 @@ import { Outlet } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import ContactHeader from '@/components/Contact/ContactHeader'
 
+
 function HomePage() {
+
+
+
+
   return (
     <>
 
         <div className='flex flex-col min-h-screen'>
         
+        
 
+        
+        
+      
 
-        {/* hero section */}
-
-            <section className='h-fit mb-[10vh]'>
+            <section id='home' className='h-fit mb-[10vh]'>
              <Hero /> 
             
             </section>
 
             <SectionSeparator title='Tech Stack' />
 
-           <section className='mb-[10vh] mt-[10vh]'>
+           <section id='stack' className='mb-[10vh] mt-[10vh]'>
              <StackSection />
            </section>
         
 
            <SectionSeparator title='Projects' />
-           <section className='mb-[10vh] mt-[10vh]'>
+           <section id='projects' className='mb-[10vh] mt-[10vh]'>
                 <ProjectsGrid />
            </section>
 
 
            <SectionSeparator title='Contact Me' />
-           <section className='mb-[10vh] mt-[10vh]'>
+           <section id='contact' className='mb-[10vh] mt-[10vh]'>
 
 
             <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1,
-              transition: {
-                duration: 0.5
-               }}}
+              initial={{ opacity: 0,  }}
+               whileInView={{ opacity: 1 }}
+               transition={{ duration:1.2 }}
               exit={{ opacity: 0 }}
               className='flex flex-col min-h-full '>
                   <ContactHeader />

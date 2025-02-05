@@ -1,8 +1,9 @@
-import { AlignHorizontalDistributeCenter, Dot, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
+import { AlignHorizontalDistributeCenter, Contact2, Dot, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
 import{ useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import me from '../../assets/image2vector.svg'
+import { Button } from '../ui/button';
 
 
 
@@ -16,22 +17,33 @@ function NavBar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);    
 
-    const links: Array<{ name: string; path: string; icon: JSX.Element }> = [
+    const links: Array<{ name: string; path: string; icon: JSX.Element , sectionId: string}> = [
         {
             name: 'Home',
             path: '/',
-            icon: <HomeIcon />
+            icon: <HomeIcon />,
+            sectionId: 'home'
         },
         {
-            name: 'About',
-            path: '/about',
-            icon: <AlignHorizontalDistributeCenter />
+            name: 'Stack',
+            path: '/',
+            icon: <AlignHorizontalDistributeCenter />,
+            sectionId: 'stack'
         },
         {
             name: 'Projects',
             path: '/projects',
-            icon: <ProjectorIcon />
+            icon: <ProjectorIcon />,
+            sectionId: 'projects'
+        },
+        {
+            name: 'Contact',
+            path: '/contact',
+            icon: <Contact2 />,
+            sectionId: 'contact'
         }
+            
+
     ];
 
 
@@ -43,6 +55,11 @@ function NavBar() {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
       }, [])
+
+      const navigateToSection = (sectionId : string) => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+        setIsMenuOpen(false)
+      }
     
 
 
@@ -125,11 +142,11 @@ function NavBar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 z-40 flex flex-col items-center justify-center w-2/3 h-screen gap-8 shadow-xl bg-blue-custom"
+            className="fixed top-0 right-0 z-40 flex flex-col items-center justify-center w-2/3 h-screen gap-8 border-l-2 shadow-xl bg-blue-custom/90 border-black-custom"
 
           > 
 
-            <div className='relative bottom-[28vh] font-bold text-beige-custom'> <h3>NILS WENTING</h3></div>
+            <div className='relative bottom-[28vh] font-bold text-black'> <h3>NILS WENTING</h3></div>
                 
 
             {links.map((item, index) => (
@@ -139,13 +156,13 @@ function NavBar() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link
-                  to={item.path}
-                  className="text-xl font-bold transition-all text-carambar-500 hover:text-carambar-700 focus:sclae-105"
-                  onClick={() => setIsMenuOpen(false)}
+                <Button
+                  
+                  className="pt-1 pb-1 pl-2 pr-2 text-lg text-black transition-all bg-yellow-200 rounded-none font-md shadow-small-custom focus:shadow-custom-hover"
+                  onClick={() => navigateToSection(item.sectionId)}
                 >
                   {item.name}
-                </Link>
+                  </Button>
               </motion.div>
             ))}
 
