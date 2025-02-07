@@ -1,6 +1,6 @@
 import { AlignHorizontalDistributeCenter, Contact2, Dot, HomeIcon, MenuIcon, ProjectorIcon, XIcon } from 'lucide-react'
 import{ useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import me from '../../assets/image2vector.svg'
 import { Button } from '../ui/button';
@@ -67,7 +67,7 @@ function NavBar() {
   return (
     <>
     
-    <div className=' border-b-2 border-black-custom p-6 flex justify-between items-center bg-[#f0ead6] sticky top-0 z-10   mt-4 '>
+    <div className='sticky top-0 z-10 flex items-center justify-between p-6 border-b-2  bg-beige-custom border-black-custom'>
     <div className="flex items-center space-x-6">
           <motion.img
                        whileHover={{ scale: 1.1 }}
@@ -83,7 +83,7 @@ function NavBar() {
                 <Link to='/contact' className='text-black'>
                 
                 <Dot className='inline-block w-4 h-4 text-green-700 -mt-0.5  '/>
-                <Link to={'/contact/mail'} className='inline-block pr-2'>Seek apprenticeship</Link>
+                <Link onClick={()=>navigateToSection("contact")} to={'/contact/mail'} className='inline-block pr-2'>Seek apprenticeship</Link>
                 
                 </Link>
                 </div>
@@ -118,14 +118,15 @@ function NavBar() {
       {!isMobile && (
         <nav className="flex flex-row items-center justify-center gap-8 pr-10 text-center">
           {links.map((item, index) => (
-            <NavLink
-              to={item.path}
+            <Button
+              
+              onClick={() => navigateToSection(item.sectionId)}
               key={index}
               
-              className="font-bold transition-all text-md text-carambar-500 hover:text-carambar-700 bubble hover:scale-110"
+              className="pt-1 pb-1 pl-4 pr-4 text-lg text-black transition-colors duration-200 bg-transparent border-none rounded-none hover:bg-yellow-200 font-md "
             >
               {item.name}
-            </NavLink>
+            </Button>
           ))}
         </nav>
       )}
@@ -158,7 +159,7 @@ function NavBar() {
               >
                 <Button
                   
-                  className="pt-1 pb-1 pl-2 pr-2 text-lg text-black transition-all bg-yellow-200 rounded-none font-md shadow-small-custom focus:shadow-custom-hover"
+                  className="w-24 pt-1 pb-1 pl-4 pr-4 text-lg text-black transition-all bg-yellow-200 rounded-none font-md shadow-small-custom focus:shadow-custom-hover"
                   onClick={() => navigateToSection(item.sectionId)}
                 >
                   {item.name}

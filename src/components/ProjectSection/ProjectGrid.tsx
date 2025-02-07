@@ -12,7 +12,7 @@ function ProjectsGrid() {
 
     const {projects, fetchProjects} = useProjects();
 
-    // useeffect pour recuperer les projets en test 
+  
 
     useEffect(() => {
       fetchProjects();
@@ -20,26 +20,29 @@ function ProjectsGrid() {
 
       
       
-    }, [fetchProjects])  // ajout de la dépendance
+    }, [fetchProjects]) 
       
 
 
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.85 }} 
+      initial={{ opacity: 0 }} 
       whileInView={{ opacity: 1}}
       transition={{ duration: 1.2}}
-    className='grid gap-6 p-4 mx-auto md:p-0 md:grid-cols-2 md:w-2/3 '>
+    className='grid w-full grid-cols-1 gap-2 px-4 mx-auto md:scale-[0.85] md:p-0 md:grid-cols-2 md:w-2/3'>
            {projects.map((project) => (
                <ProjectCard 
                   
                 key={project.id}
-                title={project.projectName}
-                description={project.projectDescription}
+                projectName={project.projectName}
+                projectDescription={project.projectDescription}
                technologiesBack={project.backendStack }
                technologiesFront={project.frontendStack}
                db={project.databaseStack}
                projectLink={project.projectLink}
+               image1={project.imageUrl1}
+                image2={project.imageUrl2}
+                projectRepoLink={project.projectRepoLink}
                            
                />
              ))}

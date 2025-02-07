@@ -38,14 +38,14 @@ function PreLoader() {
 
         {/* Logo centré */}
         <motion.img
-          initial={{ opacity: 0, scale: 0.2 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.2, visibility: 'hidden' }}
+          animate={{ opacity: 1, scale: 1, visibility: 'visible' }}
           exit={{ opacity: 0, scale: 0.2 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
           
           src={icon} 
           alt="loading icon" 
-          className="relative z-10 w-20 h-20"
+          className="relative w-20 h-20"
         />
       </motion.div>
     </AnimatePresence>

@@ -7,13 +7,13 @@ function Footer() {
         <footer className=" border-t-2 border-[#1a1a1a] p-6 bg-[#f0ead6] text-center ">
        
        <div className="flex justify-center mb-4 space-x-8">
-         <Link to="#" className="text-[#1a1a1a] hover:text-[#d1548e] transition-colors">
+         <Link to="https://github.com/nilsw13" className="text-[#1a1a1a] hover:text-[#d1548e] transition-colors">
            <Github size={28} />
          </Link>
-         <Link to="#" className="text-[#1a1a1a] hover:text-[#4ecdc4] transition-colors">
+         <Link to="https://www.linkedin.com/in/nils-wenting-332348281/" className="text-[#1a1a1a] hover:text-[#4ecdc4] transition-colors">
            <Linkedin size={28} />
          </Link>
-         <Link to="#" className="text-[#1a1a1a] hover:text-[#f7dc6f] transition-colors">
+         <Link to="#contact" className="text-[#1a1a1a] hover:text-[#f7dc6f] transition-colors">
            <Mail size={28} />
          </Link>
        </div>

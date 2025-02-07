@@ -11,7 +11,13 @@ export default {
 			boxShadow: {
 				'small-custom': '2px 2px 0px black',
 				'custom': '4px 4px 0px black',
-				'custom-hover': '8px 8px 0px black',  
+				'custom-hover': '8px 8px 0px black',
+				'custom-pink': '4px 4px 0px #d1548e',
+				'custom-pink-hover': '8px 8px 0px #d1548e',
+				'custom-blue': '4px 4px 0px #4ecdc4',
+				'custom-blue-hover': '8px 8px 0px #4ecdc4',
+				'custom-beige': '4px 4px 0px #f0ead6',
+				'custom-beige-hover': '8px 8px 0px #f0ead6',
 			  }
 			,
     		borderRadius: {

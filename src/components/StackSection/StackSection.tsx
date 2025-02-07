@@ -14,7 +14,7 @@ function StackSection() {
     className='flex flex-col items-center justify-center'>
         <StackSpeech />
         <StackIcons />
-         <p className='mt-20 font-medium'>But of course I rather Java after all ...</p>
+         <p className='mt-20 font-medium '>But of course I rather Java after all ...</p>
     </motion.div>
   )
 }

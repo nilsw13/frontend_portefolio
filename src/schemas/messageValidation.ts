@@ -61,53 +61,7 @@ const messageSchema = z.object({
 
     // email input
 
-    email: z.string().email()
-    .refine(
-        (value) => {
-          //  regex  SQL 
-          const sqlInjectionRegex = /('|"|;|--|\/\*|\*\/|@@|@|char|nchar|varchar|nvarchar|alter|begin|cast|create|cursor|declare|delete|drop|end|exec|execute|fetch|insert|kill|open|select|sys|table|update)/gi;
-          return !sqlInjectionRegex.test(value);
-        },
-        "Le texte contient des caractères non autorisés"
-      )
-      
-      // regex XSS
-      .refine(
-        (value) => {
-          
-          const xssRegex = /(<|>|javascript:|data:|vbscript:|onload=|onerror=|onclick=|onmouseover=|\%00|\%0d|\%0a)/gi;
-          return !xssRegex.test(value);
-        },
-        "Le texte contient des caractères non autorisés"
-      )
-      
-     
-      .refine(
-        (value) => {
-          // regex caractères spéciaux
-          const specialCharsRegex = /[\u0000-\u001F\u007F-\u009F\u2000-\u2029]/g;
-          return !specialCharsRegex.test(value);
-        },
-        "Le texte contient des caractères non autorisés"
-      )
-      
-      // only letters, numbers and simple punctuation
-      .refine(
-        (value) => {
-          
-          const safeCharsRegex = /^[a-zA-ZÀ-ÿ0-9\s.,!?'-]*$/;
-          return safeCharsRegex.test(value);
-        },
-        "Le texte ne doit contenir que des lettres, chiffres et ponctuation simple"
-      )
-      
-      // // starts with a letter
-      .refine(
-        (value) => /^[a-zA-ZÀ-ÿ]/.test(value),
-        "Le texte doit commencer par une lettre"
-      ),
-
-
+    email: z.string().email().nonempty(),
 
 
 
@@ -168,6 +122,8 @@ const messageSchema = z.object({
         "Le texte doit commencer par une lettre"
       ),
 
+      
+
 
 
     
@@ -205,6 +161,13 @@ const messageSchema = z.object({
         },
         "Le texte contient des caractères non autorisés"
       )
+
+      .refine(
+        // le champs doit contenir uniqument des chiffres et doit avoir une longueur de 15 maximum
+        (value) => /^[0-9]*$/.test(value),
+        "Le texte ne doit contenir que des chiffres"
+        
+      )
       
      
       .refine(
@@ -214,23 +177,10 @@ const messageSchema = z.object({
           return !specialCharsRegex.test(value);
         },
         "Le texte contient des caractères non autorisés"
-      )
-      
-      // only letters, numbers and simple punctuation
-      .refine(
-        (value) => {
-          
-          const safeCharsRegex = /^[a-zA-ZÀ-ÿ0-9\s.,!?'-]*$/;
-          return safeCharsRegex.test(value);
-        },
-        "Le texte ne doit contenir que des lettres, chiffres et ponctuation simple"
-      )
-      
-      // // starts with a letter
-      .refine(
-        (value) => /^[a-zA-ZÀ-ÿ]/.test(value),
-        "Le texte doit commencer par une lettre"
       ),
+      
+     
+      
      // sanitize input
 
 

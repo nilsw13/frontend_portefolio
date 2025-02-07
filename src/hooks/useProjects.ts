@@ -11,8 +11,10 @@ interface Project {
     databaseStack?: string;
     backendDeploymentStack?: string;
     frontendDeploymentStack?: string;
-    image_s3_url?: string;
+    imageUrl1?: string;
+    imageUrl2?: string;
     projectLink?: string;
+    projectRepoLink?: string;
 
     
 }
@@ -27,7 +29,6 @@ export function useProjects() {
     const [error, setError] = useState<string | null>(null);
 
 
-    // function to fetch projects 
 
     const fetchProjects = useCallback(async() => {
         setLoading(true);

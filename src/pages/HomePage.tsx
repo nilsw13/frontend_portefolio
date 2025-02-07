@@ -37,8 +37,8 @@ function HomePage() {
         
 
            <SectionSeparator title='Projects' />
-           <section id='projects' className='mb-[10vh] mt-[10vh]'>
-                <ProjectsGrid />
+           <section id='projects' className='mb-[10vh]  -pt-20'>
+                            <ProjectsGrid />
            </section>
 
 
@@ -53,7 +53,11 @@ function HomePage() {
               exit={{ opacity: 0 }}
               className='flex flex-col min-h-full '>
                   <ContactHeader />
+
+                  <motion.div
+                    >
                   <Outlet  />
+                  </motion.div>
             
             </motion.div>
             <div className='flex items-center justify-center w-screen mt-8'>

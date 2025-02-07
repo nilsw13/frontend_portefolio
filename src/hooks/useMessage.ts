@@ -45,7 +45,7 @@ import { useCallback, useState } from "react";
           } catch (error) {
             setError((error as any).message);
           } finally {
-            setLoading(false);  // N'oubliez pas de désactiver loading
+            setLoading(false);  
           }
         }, []);
 

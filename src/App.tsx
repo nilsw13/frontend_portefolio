@@ -89,7 +89,7 @@ function App() {
                       path='/contact/linkedin' 
                       element={<ContactTab 
                         title='Linkedin Contact'
-                        description='Check out my professional profile and network:'
+                        description='Check out my professional profile:'
                         buttonColor='bg-blue-600' 
                         buttonText='Visit my Linkedin'
                         postBUttonText='Feel free to add me to your network'

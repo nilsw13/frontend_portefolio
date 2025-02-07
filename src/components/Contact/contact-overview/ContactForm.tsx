@@ -4,9 +4,10 @@ import { useState } from 'react';
 
 import Toast from '@/components/utils/Toast';
 import messageSchema from '@/schemas/messageValidation';
+import ErrorToast from '@/components/utils/ErrorToast';
 
 
-// Définissons une interface plus simple pour les données du formulaire
+
 interface FormData {
   name: string;
   email: string;
@@ -18,7 +19,7 @@ interface FormData {
 }
 
 function ContactForm() {
-  // Simplifions l'état initial
+  
   const [formData, setFormData] = useState<FormData>({
     name: '',
     company: '',
@@ -42,6 +43,10 @@ function ContactForm() {
   const { sendMessage, loading } = useMessage();
 
 
+
+
+
+
   const resetBackgroundColors = () => {
     const formFields = document.querySelectorAll('input, textarea');
     formFields.forEach(field => {
@@ -50,7 +55,10 @@ function ContactForm() {
     });
   };
 
-  // Gestionnaire de changement amélioré
+
+
+
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
@@ -64,7 +72,9 @@ function ContactForm() {
     }));
   };
 
-  // Gestionnaire de soumission amélioré
+
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -73,7 +83,6 @@ function ContactForm() {
       const validatedData = messageSchema.parse(formData);
       
 
-      // Envoi direct des données sans imbrication inutile
       await sendMessage(validatedData);
       setShowToast(true);
 
@@ -111,8 +120,8 @@ function ContactForm() {
     <div className='flex flex-col items-center justify-center'>
     {/* Error Toast */}
     {isSubmitError && (
-      <Toast
-        message="Erreur lors de l'envoi du message"
+      <ErrorToast
+        message={`Error while sending message. Please try again later.`}
         isVisible={!showToast}
         onHide={() => setIsSubmitError(false)}
       />
@@ -121,7 +130,7 @@ function ContactForm() {
     {/* Success Toast */}
     {isSubmitSuccessful && (
       <Toast
-        message="Message envoyé avec succès !"
+        message="Message sent successfully !"
         isVisible={showToast}
         onHide={() => {
           setShowToast(false);
@@ -132,7 +141,7 @@ function ContactForm() {
 
 
       <div className='md:w-2/3 max-w-2/3 h-1/3 max-h-2/3'>
-        <Card className='h-[400px] w-[350px] p-3 mx-auto mt-4 bg-transparent border-2 rounded-none border-black-custom shadow-custom md:w-2/3'>
+        <Card className='h-[400px] w-[350px] p-3 mx-auto mt-4 bg-white border-[3px] rounded-none border-black-custom shadow-custom md:shadow-custom-hover md:w-2/3'>
          
          
        
