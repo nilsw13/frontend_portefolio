@@ -67,7 +67,7 @@ function NavBar() {
   return (
     <>
     
-    <div className='sticky top-0 z-10 flex items-center justify-between p-6 border-b-2  bg-beige-custom border-black-custom'>
+    <div className='sticky top-0 z-10 flex items-center justify-between p-6 border-b-2 bg-beige-custom border-black-custom'>
     <div className="flex items-center space-x-6">
           <motion.img
                        whileHover={{ scale: 1.1 }}
@@ -170,7 +170,7 @@ function NavBar() {
             <div className='absolute bottom-20'>
                 <span className='items-center px-2 py-1 mt-1 text-xs font-bold text-center transition-all bg-green-300 rounded-lg shadow-md hover:scale-105'>
             
-                <Link to='/contact' className='text-black'>
+                <Link onClick={()=>navigateToSection("contact")} to={'/contact/mail'} className='text-black'>
                  ¤ Seek apprenticeship
                 </Link>
                  
