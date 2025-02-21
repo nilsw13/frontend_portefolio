@@ -52,8 +52,10 @@ function ContactTab({title ,description, horaires, buttonColor, postBUttonText, 
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration:1.2 }} className='flex flex-col items-center justify-center gap-4 mt-20 mb-20'>
-                    <h2 className='text-2xl font-bold'>{title}</h2>
-                   
+
+<div className='p-2 pl-2 pr-2 mb-8 transform bg-yellow-200/40 -rotate-3'>
+  <h2 className='p-1 text-2xl font-bold transform opacity-100 rotate-3'>{title}</h2>
+</div>
                     
                     <p className='font-medium whitespace-nowrap'>{description}</p>
 

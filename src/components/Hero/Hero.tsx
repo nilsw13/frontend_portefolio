@@ -28,7 +28,13 @@ function Hero() {
 
             <Card className="bg-white border-[#1a1a1a] border-2 shadow-[4px_4px_0px_black] w-[90%]  rounded-none md:p-6 p-8 transition-all hover:shadow-[8px_8px_0px_black] hover:-translate-y-1 md:w-2/3 mx-auto">
             <p className="font-medium text-center text-md">
-            Hello, I’m Nils Wenting, a web developer based in Marseille. I specialize in creating functional and visually engaging web applications. I am actively seeking an apprenticeship to enhance my expertise and contribute to innovative projects.
+            Hello, I’m 
+            
+            <span className='p-0.5 ml-0.5 mr-0.5 transform bg-yellow-200/40 inline-block -rotate-3'>
+            <span className='inline-block rotate-3'>Nils Wenting</span>
+            </span>
+            
+            , a web developer based in Marseille. I specialize in creating functional and visually engaging web applications. I am actively seeking an apprenticeship to enhance my expertise and contribute to innovative projects.
             </p>
           </Card>
        

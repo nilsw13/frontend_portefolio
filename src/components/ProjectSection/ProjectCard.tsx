@@ -94,29 +94,35 @@ function ProjectCard({
 
                           <div className="grid justify-center grid-cols-1 gap-4 ">
 
-                          <Button className="  bg-green-300 border-2 rounded-none text-black top-4 right-4 border-black-custom shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 hover:bg-green-400/60 hover:text-white transition-all ">
+                             <a href={projectLink} className="inline-block w-full">
 
-                              <a href={projectLink}>See Online</a> 
+                          <Button className="w-full  bg-green-300 border-2 rounded-none text-black top-4 right-4 border-black-custom shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 hover:bg-green-400/60  transition-all ">
+
+                             See Online 
 
                           </Button>
+                          </a>
                           </div>
 
                       ) : (
 
                         <div className="grid justify-center grid-cols-2 gap-4 ">
 
-                        <Button className="  bg-green-300 border-2 rounded-none text-black top-4 right-4 border-black-custom shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 hover:bg-green-400/60 hover:text-white transition-all ">
+                          <a href={projectLink} className="inline-block w-full">
+                            <Button className="group w-full bg-green-300 border-2 rounded-none text-black top-4 right-4 border-black-custom shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 hover:bg-green-400/60 transition-all">
+                              See Online
+                            </Button>
+                          </a>
 
-                            <a href={projectLink}>See Online</a> 
+                          <a className="w-full " onClick={()=> console.log("clicked")
+                            } href={projectRepoLink}>
+
+                        <Button className="text-black w-full border-black  rounded-none bg-blue-300 border-2 shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 transition-all hover:bg-blue-300 ">
+
+                            See Repo
 
                         </Button>
-
-                        <Button className="text-black border-black  rounded-none bg-pink-300 border-2 shadow-custom hover:shadow-custom-hover hover:-translate-y-0.5 transition-all hover:bg-pink-custom hover:text-white">
-
-                            <a onClick={()=> console.log("clicked")
-                            } href={projectRepoLink}>See Repo </a>
-
-                        </Button>
+                        </a>
 
                   </div>
                       )
